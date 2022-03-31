@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    
+
+</head>
+
+
+<body>
+
+    <div id="app">
+        <!-- v-app으로 감싸서 실행 -->
+        <v-app>
+
+            <!-- 해드 툴바 만들기 -->
+            <v-app-bar app color="primary" dark fixed>
+
+                <!-- 좌측에 아이콘 만들기ㅏ-->
+                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+                <!-- 툴바 제목 적기 -->
+                <v-toolbar-title>마스터페이지</v-toolbar-title>
+    
+                <!-- 추가메뉴 버튼에 아이콘 추가,
+                spacer는 버튼이 오른쪽으로 옮겨줄때 사용함. -->
+                <v-spacer></v-spacer>
+                <v-btn icon><!-- v-btn 뒤에 icon을 붙이면 사각 버튼 배경이 사라지고 아이콘만 표시됨-->
+                <!-- mdi-dots-vertical은 머티리얼 공식디자인에서 가져온 아이콘-->
+                    <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+
+            </v-app-bar>
+
+
+
+                <!-- html 태그에 뷰티파이 디자인 넣을떄 class를 통해 코드를 만듬. -->
+            <v-content>
+                <v-container> <!-- 디스플레이-숫자 가 커질수록 글자도 커짐 -->
+                    <h1 class="display-2 ma-10">h테그 ma-10 적용</h1>
+                    <!-- 디스플레이 오른쪽에 ma(마진)같은 다양한 요소값을 넣을수 있음-->
+
+
+                        <!-- red--text 를 통해 글짜 색을 붉게 만들수 있음 -->
+                        <!-- blue를 통해 글자 배경색을 파란색으로 입힐수 있음 -->
+                    <h1 class="display-2 my-10 red--text blue">h테그 my-10 적용</h1>
+                    <p class="body-2">p테그 body-2 적용</p>
+                    
+
+                        <!-- v-divider로 구분선을 출력할 수 있음 -->
+                        <v-divider></v-divider>
+
+
+                        <!-- v-btn 으로 버튼을 만들수 있음 -->
+                        <v-btn>버튼입니다</v-btn>
+                        
+
+                        <!-- 이렇게 버튼에 색상을 입힐수 있음 -->
+                        <v-btn color="success">초록색 버튼 출력</v-btn>
+
+                        <!-- 이렇게 버튼 배경색과 글자색을 입힐수 있음 -->
+                        <v-btn color="blue red--text">초록색 버튼 출력</v-btn>
+
+                </v-container>
+            </v-content>
+            
+
+            <!-- footer 쪽 디자인은 이렇게 할수 있음 -->
+            <v-footer color="green accent-3" dark fixed>
+                <div class="mx-auto">footer쪽 텍스트 출력</div>
+            </v-footer>
+
+        </v-app>
+
+<!--
+    [ 기본 테마 7가지 ]
+
+    primary(파랑), secondary(짙은회색), accent(콘플라워 블루),
+    error(빨강), info(옅은파랑), success(초록), warning(노랑)
+-->
+
+
+
+    </div>
+
+
+    <script>
+        new Vue({
+            el:'#app',
+            // 뷰 인스턴스 안에 뷰티파이 객체를 추가함
+            vuetify : new Vuetify(),
+        })
+
+    </script>
+
+    
+</body>
+
+
+
+</html>

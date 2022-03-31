@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    
+</head>
+
+
+
+<body>
+
+    <div id="app">
+        <v-app>
+
+            <v-layout justify-center> <!-- 결제 버튼 중앙으로 이동 -->
+                
+                <v-btn @click="dialog = true" color="primary">결제</v-btn>
+
+                <!-- v-dialog는 v-model을 이용해서 화면을 출력하거나 출력하지 않게 하는 기능을 한다. -->
+                <!-- persistent 속성을 사용하면 버튼이 아닌 다른 곳을 클릭해도 선택창이 꺼지지 않게 할수 있음 -->
+                <v-dialog v-model="dialog" persistent max-width="400">
+                    <v-card>
+                        <v-card-title>동유럽 여행</v-card-title>
+                        <v-card-text>전과정 4성급 호텔, 결제하시겠습니까?</v-card-text>
+                        <v-card-actions>
+                            <!-- v-spacer를 이용해서 공간을 만듬 -->
+                            <v-spacer></v-spacer>
+                            <v-btn @click="btnClick()" color="green darken-10">취소,버튼클릭</v-btn>
+                            <v-btn @click="dialog = false" color="blue">확인,다이어로그 false</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-dialog>
+            </v-layout>
+
+        </v-app>
+
+    </div>
+
+
+
+<script>
+
+    new Vue({
+        el:'#app',
+        vuetify: new Vuetify(),
+
+        data: {
+            dialog: false,
+
+            methods: {
+                btnClick : function(e) {
+                    // 확인 버튼을 누를경우 콘솔로그에 결제가 진행되었습니다 라는 문구가 출력된 후 
+                    // 다이어로그는 false로 바뀐다.
+                    if (e.target.innerHTML == "확인") {
+                        console.log("결제가 진행되었습니다");
+                    }
+                    this.dialog = false
+                }
+            }
+        }
+    })
+
+
+
+</script>
+
+    
+</body>
+
+
+
+</html>

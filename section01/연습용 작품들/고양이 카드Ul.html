@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    
+
+</head>
+
+
+<body>
+
+    <div id="app">
+
+        <v-app>
+
+            <v-app-bar app>
+                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                <v-toolbar-title>타이틀</v-toolbar-title>
+
+                <v-spacer></v-spacer>
+                <v-btn>
+                    <v-icon>mdi-checkbox-multiple-blank-circle-outline</v-icon>
+                </v-btn>
+            </v-app-bar>
+
+
+            <v-content>
+                <v-container>
+                    
+                    <v-card max width="400"
+                    max height="600"
+                    class="mx-auto"
+                    :loading="loaging">
+
+
+                        <v-template>
+                            <v-progress-linear
+                            color="purple"
+                            height="10"
+                            ></v-progress-linear>
+                        </v-template>
+
+
+
+                        <img class="mx-auto"
+                        src="/Vue/img/냥이1.webp" alt=""
+                        height="300" width="400">
+
+                        <v-title>
+                            <h3 class="ml-4 my-3">고양이 사진 카드</h3>
+                        </v-title>
+
+
+                        <v-text class="my-4 ml-4 text-subtitle-1">고양이 평점</v-text>
+
+
+                        <v-row align="center" class="ma-auto">
+                        
+                        <v-rating
+                        :value="4.5"
+                        readonly size="14"
+                        class="mb-4">
+                        </v-rating>
+                        
+                        </v-row>
+
+
+                        <v-divider class="mx-2"></v-divider>
+
+                        
+                        <v-text>
+                            <p>귀여운 고양이 이미지가 삽입된 카드입니다</p>
+                        </v-text>
+
+
+                        <v-divider class="mx-2"></v-divider>
+
+                        <v-text>어떤 품종을 선택하시겠습니까?</v-text>
+
+                        <v-chip-group>
+                            
+                            <v-chip>1번 품종</v-chip>
+                            <v-chip>2번 품종</v-chip>
+                            <v-chip>3번 품종</v-chip>
+
+                        </v-chip-group>
+
+                        <v-btn>Reserve</v-btn>
+
+                    </v-card>
+
+                </v-container>
+            </v-content>
+
+
+            <v-footer>
+                <div>footer 부분</div>
+            </v-footer>
+
+
+
+
+        </v-app>
+
+
+    </div>
+
+
+
+
+<script>
+
+    new Vue({
+        el:'#app',
+        vuetify: new Vuetify(),
+    })
+
+
+
+</script>
+
+    
+
+</body>
+
+
+
+
+</html>
